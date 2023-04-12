@@ -1,0 +1,19 @@
+<h1>Listagem das contas</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NumeroConta</th>
+            <th>Saldo</th>
+            <th>Cliente</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let conta of contas">
+            <td>{{conta.id}}</td>
+            <td>{{conta.numeroConta}}</td>
+            <td>{{conta.saldo}}</td>
+            <td>{{conta.cliente.nome}}</td>
+        </tr>
+    </tbody>
+</table>
