@@ -17,5 +17,7 @@ export class ClienteService {
         return this.http.get<Cliente[]>(this.url);
     }
 
-
+    delete(id: number):Observable<void>{
+        return this.http.delete<void>(this.url + "/" + id);
+    }
 }
