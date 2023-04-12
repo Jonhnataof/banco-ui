@@ -13,4 +13,8 @@ export class ClienteListagemService {
   getAllClientes():Observable<Cliente[]>{
     return this.clienteService.getAll();
   }
+
+  deleteCliente(cliente: Cliente):Observable<void>{
+    return this.clienteService.delete(cliente.id);
+  }
 }
