@@ -13,9 +13,21 @@ export class ContaListagemComponent  implements OnInit {
   constructor (private service: ContaListagemService) {}
 
   ngOnInit(): void {
+   this.pesquisaContas();
+  }
+
+  private pesquisaContas(): void {
     this.service.getAllContas().subscribe((contas:Conta[]) => {this.contas = contas; 
     });
   }
 
+  public confirmarDelecao(conta: Conta): void {
+    if(confirm("Deseja mesmo deletar a conta?")){
+      this.service.deleteConta(conta).subscribe((resp) => { 
+        console.log(resp)
+        alert('Conta deletado com sucesso');
+        this.pesquisaContas();
+    });
+  }
 }
- 
+}
