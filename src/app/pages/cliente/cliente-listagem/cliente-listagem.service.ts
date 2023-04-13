@@ -14,7 +14,7 @@ export class ClienteListagemService {
     return this.clienteService.getAll();
   }
 
-  deleteCliente(cliente: Cliente):Observable<void>{
+  deleteCliente(cliente: Cliente):Observable<string>{
     return this.clienteService.delete(cliente.id);
   }
 }
