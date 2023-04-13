@@ -6,6 +6,7 @@
             <th>NumeroConta</th>
             <th>Saldo</th>
             <th>Cliente</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +14,11 @@
             <td>{{conta.id}}</td>
             <td>{{conta.numeroConta}}</td>
             <td>{{conta.saldo}}</td>
-            <td>{{conta.cliente.nome}}</td>
+            <td>{{conta.cliente.nome}} - {{conta.cliente.id}} </td>
+            <td>
+                <button class="editar">Editar</button>
+                <button class="deletar" (click)="confirmarDelecao(conta)">Deletar</button>
+            </td>
         </tr>
     </tbody>
 </table>
