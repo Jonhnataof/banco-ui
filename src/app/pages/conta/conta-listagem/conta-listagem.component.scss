@@ -1,33 +1,66 @@
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  
-    th, td {
-      padding: 10px;
-      text-align: left;
-      vertical-align: middle;
-      border-bottom: 1px solid #ccc;
-  
-      &:first-child {
-        border-left: 1px solid #ccc;
-      }
-  
-      &:last-child {
-        border-right: 1px solid #ccc;
-      }
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+
+    &:first-child {
+      border-left: 1px solid #ccc;
     }
-  
-    th {
-      background-color: #7986cb;
-      color: #fff;
-    }
-  
-    tr:nth-child(even) {
-      background-color: #e8eaf6;
-    }
-  
-    tbody tr:hover {
-      background-color: #c5cae9;
+
+    &:last-child {
+      border-right: 1px solid #ccc;
     }
   }
+
+  th {
+    background-color: #7986cb;
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #e8eaf6;
+  }
+
+  tbody tr:hover {
+    background-color: #c5cae9;
+  }
+
+  button {
+    display: inline-block;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .editar {
+    background-color: #5c6bc0;
+    color: #fff;
+    border: 1px solid #5c6bc0;
+  }
+
+  .editar:hover {
+    background-color: #3f51b5;
+    border: 1px solid #3f51b5;
+  }
+
+  .deletar {
+    background-color: #ef5350;
+    color: #fff;
+    border: 1px solid #ef5350;
+  }
+
+  .deletar:hover {
+    background-color: #e53935;
+    border: 1px solid #e53935;
+  }
+}
