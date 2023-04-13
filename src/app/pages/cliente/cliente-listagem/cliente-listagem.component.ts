@@ -14,12 +14,21 @@ export class ClienteListagemComponent implements OnInit {
   constructor(private service: ClienteListagemService) { }
 
   ngOnInit() {
+    this.pesquisaClientes();
+  }
+
+  private pesquisaClientes(): void {
     this.service.getAllClientes().subscribe((clientes: Cliente[]) => {
       this.clientes = clientes;
     });
   }
 
   public confirmarDelecao(cliente: Cliente): void {
-    this.service.deleteCliente(cliente).subscribe(() => { alert('Cliente deletado com sucesso') });
+    if (confirm("Deseja mesmo deletar o cliente?")){
+      this.service.deleteCliente(cliente).subscribe((response) => { 
+        alert('Cliente deletado com sucesso!!');
+        this.pesquisaClientes();
+      });
+    }
   }
 }
