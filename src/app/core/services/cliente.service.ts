@@ -4,20 +4,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Injectable } from '@angular/core';
 
-@Injectable ({
+@Injectable({
     providedIn: 'root'
 })
 
 export class ClienteService {
     url = environment.apiUrl + 'cliente';
 
-    constructor (private http:HttpClient) {}
+    constructor(private http: HttpClient) { }
 
-    getAll():Observable<Cliente[]>{
+    getAll(): Observable<Cliente[]> {
         return this.http.get<Cliente[]>(this.url);
     }
 
-    delete(id: number):Observable<void>{
-        return this.http.delete<void>(this.url + "/" + id);
+    delete(id: number): Observable<string> {
+        return this.http.delete(this.url + "/" + id, { responseType: 'text' });
     }
 }
