@@ -8,7 +8,6 @@ import { Observable } from "rxjs";
 @Injectable ({
     providedIn: 'root'
 })
-
 export class ContaService {
     url = environment.apiUrl + 'conta';
 
@@ -18,4 +17,7 @@ export class ContaService {
         return this.http.get<Conta[]>(this.url);
     }
 
+    delete(id: number):Observable<string>{
+        return this.http.delete(this.url + "/" + id, {responseType: 'text'});
+    }
 }
