@@ -15,4 +15,8 @@ export class ContaListagemService {
   getAllContas():Observable<Conta[]>{
     return this.contaService.getAll();
   }
+
+  deleteConta(conta: Conta):Observable<string>{
+    return this.contaService.delete(conta.id);
+  }
 }
