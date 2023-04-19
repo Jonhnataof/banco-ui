@@ -5,7 +5,7 @@ export class Cliente {
     endereco!: string;
     telefone!: string;
 
-    constructor (cliente?:Partial<Cliente>) {
+    constructor(cliente?: Partial<Cliente>) {
         Object.assign(this, cliente);
     }
 }
