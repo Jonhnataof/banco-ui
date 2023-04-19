@@ -12,7 +12,11 @@ const routes: Routes = [
   },
   {
     path: "conta", 
-    loadChildren: () => import("./pages/conta/conta-listagem/conta-listagem.module").then(m => m.ContaListagemModule),
+    loadChildren: () => import("./pages/conta/conta-listagem/conta-listagem.module").then(m => m.ContaListagemModule)
+  },
+  {
+    path: "conta/formulario",
+    loadChildren: () => import("./pages/conta/conta-formulario/conta-formulario.module").then(m => m.ContaFormularioModule)
   }
 ];
 
