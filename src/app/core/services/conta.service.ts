@@ -17,6 +17,11 @@ export class ContaService {
         return this.http.get<Conta[]>(this.url);
     }
 
+    create(conta: Conta): Observable<string> {
+        
+        return this.http.post(this.url, conta, {responseType:'text'});
+    }
+
     delete(id: number):Observable<string>{
         return this.http.delete(this.url + "/" + id, {responseType: 'text'});
     }

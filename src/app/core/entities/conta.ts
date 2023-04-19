@@ -6,7 +6,7 @@ export class Conta {
     saldo!: number;
     cliente!: Cliente;
 
-    constructor (conta?:Partial<Conta>){
-        Object.assign(this,conta);
+    constructor(conta?: Partial<Conta>) {
+        Object.assign(this, conta);
     }
 }
