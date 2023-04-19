@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteFormularioService } from './cliente-formulario.service';
-import { Cliente } from 'src/app/core/entities/cliente';
+import { Cliente } from '@entities';
 
 @Component({
   selector: 'app-cliente-formulario',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Conta } from 'src/app/core/entities/conta';
+import { Conta } from '@entities';
 import { ContaListagemService } from './conta-listagem.service';
 
 @Component({

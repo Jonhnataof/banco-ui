@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from 'src/app/core/entities/cliente';
-import { Conta } from 'src/app/core/entities/conta';
-import { ClienteService } from 'src/app/core/services/cliente.service';
-import { ContaService } from 'src/app/core/services/conta.service';
+import { Cliente, Conta } from '@entities';
+import { ClienteService, ContaService } from '@services';
 
 
 @Injectable({

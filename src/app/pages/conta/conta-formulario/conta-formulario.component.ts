@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ContaFormularioService } from './conta-formulario.service';
-import { Conta } from 'src/app/core/entities/conta';
-import { Cliente } from 'src/app/core/entities/cliente';
+import { Cliente, Conta } from '@entities';
 
 
 @Component({

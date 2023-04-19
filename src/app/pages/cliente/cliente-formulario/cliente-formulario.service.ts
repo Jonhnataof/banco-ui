@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from 'src/app/core/entities/cliente';
-import { ClienteService } from 'src/app/core/services/cliente.service';
+import { Cliente } from '@entities';
+import { ClienteService } from '@services';
 
 @Injectable({
   providedIn: 'root'
