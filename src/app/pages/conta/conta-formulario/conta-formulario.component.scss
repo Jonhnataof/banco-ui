@@ -1,0 +1,81 @@
+$form-bg-color: #fff;
+
+form {
+  width: 100%;
+  padding-left: 2rem;
+
+  div {
+    margin-bottom: 10px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    select {
+      display: block;
+      width: 30%;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      transition: border-color 0.2s ease-in-out;
+
+      &:focus {
+        outline: none;
+        border-color: #7986cb;
+      }
+    }
+
+    select {
+      appearance: none;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237986cb' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 16px;
+      padding-right: 32px;
+    }
+  }
+
+  button {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  button,
+  input[type="submit"] {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &.limpar {
+      background-color: #ccc;
+      color: #333;
+
+      &:hover {
+        background-color: #aaa;
+      }
+    }
+
+    &.salvar {
+      background-color: #5c6bc0;
+      color: #fff;
+
+      &:hover {
+        background-color: #3f51b5;
+      }
+    }
+  }
+
+  background-color: $form-bg-color;
+}

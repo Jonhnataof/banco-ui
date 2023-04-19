@@ -1,3 +1,5 @@
+<h1>Formulário Cliente</h1>
+<hr>
 <form [formGroup]="formulario">
     <div>
         <label for="nome">Nome:</label>
@@ -16,8 +18,8 @@
         <input type="text" id="endereco" formControlName="endereco">
     </div>
     <div>
-        <button type="button" (click)="limpar()">Limpar</button>
-        <button type="button" (click)="salvar()">Salvar</button>
+        <button type="button" class="limpar"  (click)="limpar()">Limpar</button>
+        <button type="button" class="salvar" (click)="salvar()">Salvar</button>
     </div>
 
 </form>

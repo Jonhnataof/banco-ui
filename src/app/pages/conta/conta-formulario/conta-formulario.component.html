@@ -1,3 +1,5 @@
+<h1>Formulário Conta</h1>
+<hr>
 <form [formGroup]="formulario">
     <div>
         <label for="numeroConta">NumeroConta</label>
@@ -10,11 +12,12 @@
     <div>
         <label for="cliente">Cliente</label>
         <select id="cliente" formControlName="cliente">
-            <option *ngFor="let cliente of clientesDropdown" [ngValue]="cliente" >{{ cliente.id}} - {{cliente.nome}}</option>
-        </select> 
+            <option *ngFor="let cliente of clientesDropdown" [ngValue]="cliente">{{ cliente.id}} - {{cliente.nome}}
+            </option>
+        </select>
     </div>
     <div>
-        <button type="button" (click)="limpar()">Limpar</button>
-        <button type="button" (click)="salvar()">Salvar</button>
+        <button type="button" class="limpar" (click)="limpar()">Limpar</button>
+        <button type="button" class="salvar" (click)="salvar()">Salvar</button>
     </div>
 </form>
