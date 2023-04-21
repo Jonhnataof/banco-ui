@@ -43,7 +43,7 @@ form {
 
   button {
     &:first-child {
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }
 
@@ -58,6 +58,7 @@ form {
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 
+    &.cancelar,
     &.limpar {
       background-color: #ccc;
       color: #333;
@@ -70,7 +71,7 @@ form {
     &.salvar {
       background-color: #5c6bc0;
       color: #fff;
-
+      margin-left: 10px;
       &:hover {
         background-color: #3f51b5;
       }
