@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path:"",
     component: ContaFormularioComponent
+  },
+  {
+    path:":id",
+    component: ContaFormularioComponent
   }
 ];
 
