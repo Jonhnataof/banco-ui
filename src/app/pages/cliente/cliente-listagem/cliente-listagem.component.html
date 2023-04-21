@@ -1,4 +1,4 @@
-<h1>Listagem de clientes!</h1>
+<h1>Listagem de clientes<button class="novo" (click)="navegarParaFormulario()" >Novo</button> </h1> 
 <table>
     <thead>
         <tr>
@@ -18,7 +18,7 @@
             <td>{{cliente.endereco}}</td>
             <td>{{cliente.telefone}}</td>
             <td>
-                <button class="editar">Editar</button>
+                <button class="editar" (click)="navegarParaFormulario(cliente)">Editar</button>
                 <button class="deletar" (click)="confirmarDelecao(cliente)">Deletar</button>
             </td>
         </tr>
