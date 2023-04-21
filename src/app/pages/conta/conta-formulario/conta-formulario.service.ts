@@ -21,5 +21,10 @@ export class ContaFormularioService {
   public pegarTodosClientes(): Observable<Cliente[]> {
     return this.clientService.getAll(); 
   }
+
+  public pegarContaPorId(id: number): Observable<Conta> {
+    return this.contaService.getById(id);
+  }
+
 }
  
