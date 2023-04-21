@@ -24,4 +24,8 @@ export class ClienteService {
     delete(id: number): Observable<string> {
         return this.http.delete(this.url + "/" + id, { responseType: 'text' });
     }
+
+    getById(id: number): Observable<Cliente> {
+        return this.http.get<Cliente>(`${this.url}/${id}`);
+    }
 }
