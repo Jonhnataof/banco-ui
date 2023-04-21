@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ContaFormularioService } from './conta-formulario.service';
 import { Cliente, Conta } from '@entities';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 
 @Component({
@@ -13,11 +14,13 @@ export class ContaFormularioComponent implements OnInit {
 
   public formulario!: FormGroup;
   public clientesDropdown!: Cliente[];
-
+  public contaDetalhe!: Conta;
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: ContaFormularioService
+    private service: ContaFormularioService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +34,17 @@ export class ContaFormularioComponent implements OnInit {
       this.clientesDropdown = clientes;
     });
 
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id != null) {
+      this.pegarConta(Number(id));
+    }
+  }
+
+  private pegarConta(id: number): void {
+    this.service.pegarContaPorId(id).subscribe((conta: Conta) => {
+      this.contaDetalhe = conta;
+      this.formulario.patchValue(this.contaDetalhe)
+    });
   }
 
   public limpar(): void {
@@ -40,8 +54,10 @@ export class ContaFormularioComponent implements OnInit {
   public salvar(): void {
     let conta = new Conta(this.formulario.value);
 
-    debugger;
     this.service.criarConta(conta).subscribe(() => { alert('Conta salva com sucesso!') });
   }
 
+  public cancelar(): void {
+    this.router.navigate(['/conta'])
+  }
 }
