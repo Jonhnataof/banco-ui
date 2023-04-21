@@ -25,4 +25,9 @@ export class ContaService {
     delete(id: number):Observable<string>{
         return this.http.delete(this.url + "/" + id, {responseType: 'text'});
     }
+
+    getById(id: number): Observable<Conta> {
+        return this.http.get<Conta>(`${this.url}/${id}`);
+    }
+  
 }
