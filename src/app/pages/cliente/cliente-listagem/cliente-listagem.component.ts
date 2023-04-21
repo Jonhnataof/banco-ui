@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteListagemService } from './cliente-listagem.service';
 import { Cliente } from '@entities';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-listagem',
@@ -11,7 +12,10 @@ export class ClienteListagemComponent implements OnInit {
 
   clientes!: Cliente[];
 
-  constructor(private service: ClienteListagemService) { }
+  constructor(
+    private service: ClienteListagemService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.pesquisaClientes();
@@ -29,6 +33,13 @@ export class ClienteListagemComponent implements OnInit {
         alert('Cliente deletado com sucesso!!');
         this.pesquisaClientes();
       });
+    } 
+  }
+  public navegarParaFormulario(cliente?: Cliente) {
+    if (cliente != null) {
+      this.router.navigate(['cliente/formulario/', cliente.id]);
+    }else {
+      this.router.navigate(['cliente/formulario']);
     }
   }
 }
