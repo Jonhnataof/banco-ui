@@ -1,4 +1,4 @@
-<h1>Listagem das contas</h1>
+<h1>Listagem das contas <button class="novo" (click)="navegarParaFormulario()" >Novo</button> </h1>
 <table>
     <thead>
         <tr>
@@ -16,7 +16,7 @@
             <td>{{conta.saldo}}</td>
             <td>{{conta.cliente.nome}} - {{conta.cliente.id}} </td>
             <td>
-                <button class="editar">Editar</button>
+                <button class="editar" (click)="navegarParaFormulario(conta)">Editar</button>
                 <button class="deletar" (click)="confirmarDelecao(conta)">Deletar</button>
             </td>
         </tr>
