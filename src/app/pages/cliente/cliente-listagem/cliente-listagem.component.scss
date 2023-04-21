@@ -1,3 +1,31 @@
+h1 {
+
+    display: flex;
+    justify-content: space-between;
+  
+    button {
+      display: inline-block;
+      padding: 8px;
+      margin-right: 5px;
+      border-radius: 3px;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  
+    .novo {
+      background-color: #5c6bc0;
+      color: #fff;
+      border: 1px solid #5c6bc0;
+    }
+  
+    .novo:hover {
+      background-color: #3f51b5;
+      border: 1px solid #3f51b5;
+    }
+  
+  }  
+
 table {
     width: 100%;
     border-collapse: collapse;
