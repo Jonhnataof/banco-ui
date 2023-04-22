@@ -48,9 +48,11 @@ export class ClienteFormularioComponent implements OnInit {
   }
 
   public salvar(): void {
-    let cliente = new Cliente(this.formulario.value);
+    let cliente = new Cliente({...this.clienteDetalhe, ...this.formulario.value});
 
-    this.service.criarCliente(cliente).subscribe(() => {alert('Cliente salvo com sucesso')});
+    this.service.salvarCliente(cliente).subscribe((mensagem: string) => {
+      alert(mensagem);
+    });
   }
 
   public cancelar(): void {
