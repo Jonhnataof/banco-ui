@@ -9,15 +9,19 @@ import { ClienteService, ContaService } from '@services';
 export class ClienteFormularioService {
 
   constructor(
-    private clienteService: ClienteService,
-    private contaService: ContaService
-    ) { }
+    private clienteService: ClienteService
+  ) { }
 
-  public criarCliente(cliente: Cliente): Observable<string> {
-    return this.clienteService.create(cliente);
-  } 
+  public salvarCliente(cliente: Cliente): Observable<string> {
+    console.log(cliente.id, {cliente});
+    if (!!cliente.id) {
+      return this.clienteService.update(cliente);
+    } else {
+      return this.clienteService.create(cliente);
+    }
+  }
 
   public pegarClientePorId(id: number): Observable<Cliente> {
-    return this.clienteService.getById(id); 
+    return this.clienteService.getById(id);
   }
 }
