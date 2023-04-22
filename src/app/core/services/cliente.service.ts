@@ -21,6 +21,10 @@ export class ClienteService {
         return this.http.post(this.url, cliente, { responseType: 'text' });
     }
 
+    update(cliente: Cliente): Observable<string> {
+        return this.http.put(`${this.url}/${cliente.id}`, cliente, { responseType: 'text' });
+    }
+
     delete(id: number): Observable<string> {
         return this.http.delete(this.url + "/" + id, { responseType: 'text' });
     }
