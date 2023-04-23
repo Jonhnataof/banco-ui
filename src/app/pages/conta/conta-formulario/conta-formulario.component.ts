@@ -54,7 +54,7 @@ export class ContaFormularioComponent implements OnInit {
   public salvar(): void {
     let conta = new Conta(this.formulario.value);
 
-    this.service.criarConta(conta).subscribe(() => { alert('Conta salva com sucesso!') });
+    this.service.salvarConta(conta).subscribe(() => { alert('Conta salva com sucesso!') });
   }
 
   public cancelar(): void {
