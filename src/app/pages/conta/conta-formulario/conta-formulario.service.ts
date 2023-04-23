@@ -14,8 +14,12 @@ export class ContaFormularioService {
     private clientService: ClienteService
   ) { }
 
-  public criarConta (conta: Conta): Observable<string> {
-    return this.contaService.create(conta);
+  public salvarConta (conta: Conta): Observable<string> {
+    if (!!conta.id) {
+      return this.contaService.update(conta);
+    } else {
+      return this.contaService.create(conta);
+    }
   }
 
   public pegarTodosClientes(): Observable<Cliente[]> {
