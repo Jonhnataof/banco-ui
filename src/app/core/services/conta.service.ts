@@ -17,6 +17,10 @@ export class ContaService {
         return this.http.get<Conta[]>(this.url);
     }
 
+    update(conta: Conta): Observable<string> {
+        return this.http.put(`${this.url}/${conta.id}`, conta, {responseType: 'text'});
+    }
+
     create(conta: Conta): Observable<string> {
         
         return this.http.post(this.url, conta, {responseType:'text'});
